@@ -9,7 +9,7 @@ resource "aws_instance" "test_instance" {
     Name = "test_instance"
     createdby = "Ramesh vallapu"
   }
-
+}
 resource "aws_security_group" "allow_ssh" {
     name = "allow_ssh"
     description = "allowing the ssh access "
@@ -32,5 +32,4 @@ resource "aws_security_group" "allow_ssh" {
         Name = "allow_ssh"
         createdBy = "Ramesh Vallapu"
     }
-}
 }
