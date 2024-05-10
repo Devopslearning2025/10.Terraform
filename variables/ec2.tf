@@ -16,14 +16,13 @@ resource "aws_security_group" "allow_ssh" {
         from_port        = var.ssh_port
         to_port          = var.ssh_port
         protocol         = var.ssh_protocol
-        cidr_blocks      = var.allowed_cidr
+        cidr_blocks      = var.cidr_value
     }
-
     egress {
         from_port        = 0 # from 0 to 0 means opening for all protocols
         to_port          = 0
         protocol         = "-1"
-        cidr_blocks      = var.allowed_cidr
+        cidr_blocks      = var.cidr_value
     }
 
     tags = {
