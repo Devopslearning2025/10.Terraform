@@ -1,6 +1,9 @@
-# 1st preference command lin
-# 2nd preference .tfvars
-# 3rd preference default values
+#ec2 variables
+variable "instance_names" {
+    type = list(string)
+    default = ["db", "backend", "frontend" ]  
+}
+
 variable "image_id" {
     type = string
     default = "ami-090252cbe067a9e58"
@@ -13,15 +16,15 @@ variable "instance_type" {
     description = "This is t3 micro free os"  #optional
 }
 
-variable "tags" {
+variable "common_tags" {
     default = {
         Environment = "Dev"
         Project     = "Expense"
-        Module      = "Test"
-        Name        =  "Test" 
+        terraform   = "True"
     }
 }
 
+#security group variables 
 variable "ssh_port" {
     default = 22
 }
@@ -35,7 +38,17 @@ variable "cidr_value" {
 variable "sg_name" {
     default = "allow_ssh" 
 }
-
 variable "sg_description" {
     default = "allow access throgh ssh on port 22"  
+}
+
+#r53 variables
+variable "zone_id" {
+    default = "Z01770472ZXHIS1GBI6I5"  
+}
+
+variable "domain_name" {
+    type = string
+    default = "devopslearning2025.online"
+  
 }

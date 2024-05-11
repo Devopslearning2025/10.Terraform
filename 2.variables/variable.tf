@@ -1,12 +1,7 @@
 # 1st preference command lin
 # 2nd preference .tfvars
-# 3rd preference default values
-
-variable "instance_names" {
-    type = list 
-    default = [ "db", "backend", "frontend" ]
-}
-
+# 3rd prerefrence Environment values
+# 4th preference default values
 variable "image_id" {
     type = string
     default = "ami-090252cbe067a9e58"
@@ -19,11 +14,12 @@ variable "instance_type" {
     description = "This is t3 micro free os"  #optional
 }
 
-variable "common_tags" {
+variable "tags" {
     default = {
         Environment = "Dev"
         Project     = "Expense"
-        terraform   = "true"        
+        Module      = "Test"
+        Name        = "Test" 
     }
 }
 
@@ -40,7 +36,6 @@ variable "cidr_value" {
 variable "sg_name" {
     default = "allow_ssh" 
 }
-
 variable "sg_description" {
     default = "allow access throgh ssh on port 22"  
 }

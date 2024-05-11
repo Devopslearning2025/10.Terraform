@@ -1,6 +1,10 @@
+# 1st preference command lin
+# 2nd preference .tfvars
+# 3rd preference default values
+
 variable "instance_names" {
-    type = list(string)
-    default = ["db", "backend", "frontend" ]  
+    type = list 
+    default = [ "db", "backend", "frontend" ]
 }
 
 variable "image_id" {
@@ -19,7 +23,7 @@ variable "common_tags" {
     default = {
         Environment = "Dev"
         Project     = "Expense"
-        terraform   = "True"
+        terraform   = "true"        
     }
 }
 
@@ -36,6 +40,7 @@ variable "cidr_value" {
 variable "sg_name" {
     default = "allow_ssh" 
 }
+
 variable "sg_description" {
-    default = "allow access throgh ssh on port 22"  
+    default = "allow SSH access"
 }
