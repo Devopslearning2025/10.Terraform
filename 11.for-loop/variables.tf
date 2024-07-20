@@ -2,7 +2,7 @@ variable "instance_names" {
     type = map
     default = {
         db       = "t3.medium"
-        backend  = "t3.micro"
+        backend  = "t2.micro"
         frontend = "t3.small"
     }
 }
